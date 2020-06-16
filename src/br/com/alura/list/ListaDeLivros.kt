@@ -4,7 +4,6 @@ fun main() {
 
     val livros = listaDeLivros
 
-
     livros.imprimeComMarcadores()
 
     livros.imprimeComMarcadores()
