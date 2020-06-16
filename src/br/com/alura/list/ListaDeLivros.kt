@@ -2,21 +2,10 @@ package br.com.alura.list
 
 fun main() {
 
+    val livros = listaDeLivros
 
-
-    val livros: MutableList<Livro> = mutableListOf(livro1, livro2, livro3, livro4)
-
-    livros.add(
-        Livro(
-            titulo = "Sagarana",
-            autor = "João Guimarães Rosa",
-            anoPublicacao = 1946
-        )
-    )
 
     livros.imprimeComMarcadores()
-
-    livros.remove(livro1)
 
     livros.imprimeComMarcadores()
 
@@ -28,6 +17,12 @@ fun main() {
 
     livros.sortedBy { it.autor }.imprimeComMarcadores()
 
+    val titulos:List<String> = listaDeLivros
+        .filter { it.autor.startsWith("J") }
+        .sortedBy { it.anoPublicacao }
+        .map { it.titulo }
+
+    println(titulos)
 }
 
 fun List<Livro>.imprimeComMarcadores() {

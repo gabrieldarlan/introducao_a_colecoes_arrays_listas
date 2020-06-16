@@ -5,6 +5,10 @@ val listaDeLivros = mutableListOf(
         titulo = "Grande Sertão: Veredas",
         autor = "João Guimarães Rosa",
         anoPublicacao = 1956
+    ),  Livro(
+        titulo = "Sagarana de João Guimarães Rosa",
+        autor = "João Guimarães Rosa",
+        anoPublicacao = 1955
     ),
 
     Livro(
