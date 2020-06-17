@@ -45,7 +45,7 @@ fun main() {
         nome.first()
     }
     println(agenda)
-    println(agenda['A'])
+    println(agenda['P'])
 }
 
 data class Pedido(val numero: Int, val valor: Double)
