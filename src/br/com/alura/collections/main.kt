@@ -1,39 +1,31 @@
 package br.com.alura.collections
 
 fun main() {
+    val assistiramCursoAndroid: Set<String> = setOf("Alex", "Fran", "Gui", "Maria")
+    val assistiramCursoKotlin: Set<String> = setOf("Alex", "Paulo", "Maria")
+//    val assistiramAmbos: Set<String> = assistiramCursoAndroid + assistiramCursoKotlin
+    val assistiramAmbos = mutableSetOf<Any>()
+    assistiramAmbos.addAll(assistiramCursoAndroid)
+    assistiramAmbos.addAll(assistiramCursoKotlin)
+    assistiramAmbos.add("Ana")
+    assistiramAmbos.add("Ana")
+    println(assistiramAmbos)
 
-    val banco = BancoDeNomes()
-    val nomesSalvos: Collection<String> = banco.nomes
-    banco.salva("Alex")
-    println(nomesSalvos)
-    println(BancoDeNomes().nomes)
+    println(assistiramCursoKotlin + assistiramCursoAndroid)
+    println(assistiramCursoKotlin union assistiramCursoAndroid)
+
+    println(assistiramCursoAndroid - assistiramCursoKotlin)
+    println(assistiramCursoAndroid subtract assistiramCursoKotlin)
+
+    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
+
+    val assistiramList = assistiramAmbos.toMutableList()
+    assistiramList.add("Alex")
+    println(assistiramList)
+    println(assistiramList.toSet())
+
+
 
 }
 
-class BancoDeNomes {
-    val nomes: Collection<String> get() = dados.toList()
 
-    fun salva(nome: String) {
-        dados.add(nome)
-    }
-
-    companion object {
-        private val dados = mutableListOf<String>()
-    }
-}
-
-fun testaColecao() {
-    val nomes: Collection<String> = mutableListOf(
-        "Alex",
-        "Fran",
-        "Gui",
-        "Maria",
-        "Ana"
-    )
-    for (nome in nomes) {
-        println(nome)
-    }
-    println(nomes)
-    println("Te o nome Alex? ${nomes.contains("Alex")}")
-    println("Tamanho da coleção ${nomes.size}")
-}
